@@ -1,0 +1,10 @@
+pandas==2.3.3
+nolds==0.6.3
+numpy==2.3.5
+hurst==0.0.5
+fbm==0.3.0
+yfinance==0.2.66
+matplotlib==3.10.8
+scikit-learn==1.8.0
+tqdm==4.67.1
+# fractalmarkets==1.0.1
