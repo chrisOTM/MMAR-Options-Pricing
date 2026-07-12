@@ -391,8 +391,9 @@ def option_pricer_half_time(paths, strike, r, T, option_type):
     if isinstance(paths, list):
         paths = np.array(paths)
 
-    # Convert year fraction to an integer day index.
-    half_time_dte = round(T * 365)
+    # Convert year fraction to an integer day index (half of the horizon).
+    # Clamp to the last valid column to prevent IndexError.
+    half_time_dte = min(round(T * 365 / 2), paths.shape[1] - 1)
     # print(f"Half Time DTE: {half_time_dte}")
 
     # Asset prices at the selected intermediate index.
